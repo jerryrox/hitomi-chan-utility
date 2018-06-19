@@ -1,1 +1,1 @@
-# hitomi-chan-server-utility
+# hitomi-chan-utility
