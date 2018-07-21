@@ -27,7 +27,7 @@ function getTagsUrl() {
  * Returns the url of a javascript file that contains a gallery's page information.
  */
 function getPageInfoUrl(galleryId) {
-    return `${getBaseUrl()}/galleries/${galleryId}.js`;
+    return `${getBaseUrl(cdn.getGalleryInfoPrefix())}/galleries/${galleryId}.js`;
 }
 
 /**

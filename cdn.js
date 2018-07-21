@@ -22,8 +22,16 @@ function getFullPrefix(galleryId, isMeta) {
     return `${getLocationPrefix(galleryId)}${getBasePrefix(isMeta)}`;
 }
 
+/**
+ * Returns the prefix used for gallery info.
+ */
+function getGalleryInfoPrefix() {
+    return "ltn";
+}
+
 module.exports = {
     getLocationPrefix,
     getBasePrefix,
-    getFullPrefix
+    getFullPrefix,
+    getGalleryInfoPrefix
 };
