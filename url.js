@@ -10,6 +10,21 @@ function getBaseUrl(cdn = null) {
 }
 
 /**
+ * Returns the url of Hitomi's search library js.
+ */
+function getSearchlibJsUrl() {
+    return `${getBaseUrl("ltn")}/searchlib.js`;
+}
+
+/**
+ * Returns the url of Hitomi's gallery data.
+ * @param {number} index 
+ */
+function getGalleryJson(index) {
+    return `${getBaseUrl("ltn")}/galleries${index}.json`;
+}
+
+/**
  * Returns the base stream url of hitomi.la
  */
 function getStreamingUrl() {
@@ -73,6 +88,8 @@ function getSmallThumbUrl(galleryId, fileName) {
 
 module.exports = {
     getBaseUrl,
+    getSearchlibJsUrl,
+    getGalleryJson,
     getStreamingUrl,
     getTagsUrl,
     getPageInfoUrl,
