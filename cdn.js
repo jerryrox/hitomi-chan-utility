@@ -2,10 +2,21 @@
  * Returns the location prefix string that corresponds to specified gallery id.
  */
 function getLocationPrefix(galleryId) {
-    let id = Number(galleryId);
-    if(isNaN(id))
-        id = 0;
-    return id % 2 === 1 ? "b" : "a";
+    // Mimic hitomi's implementation of cdn prefix parsing.
+    let prefix = "a";
+    let frontendCount = 2;
+    let result = /\/\d*(\d)\//.exec(galleryId);
+    if(!result) {
+        return prefix;
+    }
+    var lastDigit = parseInt(result[1], 10);
+    if(isNaN(lastDigit)) {
+        return prefix;
+    }
+    if(lastDigit === 1) {
+        lastDigit = 0;
+    }
+    return String.fromCharCode(lastDigit % frontendCount + 97);
 }
 
 /**
